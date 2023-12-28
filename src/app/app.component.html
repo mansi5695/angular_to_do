@@ -1,0 +1,12 @@
+<h1>Todo App</h1>
+<input [(ngModel)]="newTodo" />
+<button (click)="addTodo()">Add</button>
+<ul>
+  <li *ngFor="let todo of todos">
+    <span [style.textDecoration]="todo.completed ? 'line-through' : 'none'">
+      {{ todo.text }}
+    </span>
+    <button (click)="updateTodoText(todo.id, todo.text)">Update</button>
+    <button (click)="deleteTodoItem(todo.id)">Delete</button>
+  </li>
+</ul>
